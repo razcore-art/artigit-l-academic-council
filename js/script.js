@@ -1,8 +1,5 @@
 /* global BABYLON, anime */
-const pkg = JSON.parse(`{
-  "baseURL": "https://razcore-art.github.io",
-  "name": "artigit-l-academic-council"
-}`)
+const pkg = JSON.parse('{"name": "artigit-l-academic-council"}')
 
 function randomUnicode () {
   const min = 0x21
@@ -26,7 +23,7 @@ function main () {
   camera.setTarget(BABYLON.Vector3.Zero())
   camera.attachControl(canvas, true)
 
-  fetch(`${pkg.baseURL}/${pkg.name}/assets/particleSystem.json`)
+  fetch(`/${pkg.name}/assets/particleSystem.json`)
     .then((response) => response.json())
     .then((data) => {
       const particleSystem = BABYLON.ParticleSystem.Parse(data, scene, '')
