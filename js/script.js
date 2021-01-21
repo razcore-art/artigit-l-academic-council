@@ -21,7 +21,7 @@ function main (name, env) {
   camera.setTarget(BABYLON.Vector3.Zero())
   camera.attachControl(canvas, true)
 
-  let path = 'assets/particleSystem.json'
+  let path = '/assets/particleSystem.json'
   if (env === 'production') path = `/${name}${path}`
 
   fetch(path)
