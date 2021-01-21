@@ -1,9 +1,10 @@
 {
-  "name": "css",
+  "name": "artigit-l-academic-council",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "publish": "ENV=production npx eleventy && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -2,9 +2,14 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet" href="/css/style.css")
     script(src="https://preview.babylonjs.com/babylon.js")
     script(src="https://unpkg.com/animejs/lib/anime.min.js")
+    if project.ENV === "production"
+      script(src=`/${pkg.name}/js/script.js`)
+      link(rel="stylesheet" href=`/${pkg.name}/css/style.css`)
+    else
+      script(src="/js/script.js")
+      link(rel="stylesheet" href="/css/style.css")
     title aritig-l - academic council - digital twins
 
   body
@@ -12,4 +17,5 @@ html
       canvas#babylon-engine
       section#title-wrapper
         h1#title
-    script(src="/js/script.js")
+
+    script main('#{pkg.name}', '#{project.ENV}')
