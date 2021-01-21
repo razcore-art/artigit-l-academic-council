@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "develop": "npx eleventy --serve",
     "publish": "ENV=production npx eleventy && gh-pages -d public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
