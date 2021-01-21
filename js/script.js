@@ -1,13 +1,11 @@
 /* global BABYLON, anime */
-const pkg = JSON.parse('{"name": "artigit-l-academic-council"}')
-
 function randomUnicode () {
   const min = 0x21
   const max = 0x7e
   return String.fromCharCode(min + (max - min + 1) * Math.random())
 }
 
-function main () {
+function main (name, env) {
   const canvas = document.getElementById('babylon-engine')
   const babylon = new BABYLON.Engine(canvas, true, {
     preserveDrawingBuffer: true,
@@ -23,7 +21,10 @@ function main () {
   camera.setTarget(BABYLON.Vector3.Zero())
   camera.attachControl(canvas, true)
 
-  fetch(`/${pkg.name}/assets/particleSystem.json`)
+  let path = '/assets/particleSystem.json'
+  if (env === 'production') path = `/${name}$path`
+
+  fetch(path)
     .then((response) => response.json())
     .then((data) => {
       const particleSystem = BABYLON.ParticleSystem.Parse(data, scene, '')
@@ -112,5 +113,3 @@ function main () {
   babylon.runRenderLoop(() => scene.render())
   window.addEventListener('resize', () => babylon.resize())
 }
-
-main()
