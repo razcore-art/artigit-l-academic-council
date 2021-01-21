@@ -19,6 +19,8 @@ module.exports = (config) => {
     entryPoints: { style: entryPointSCSS },
     output: outputSCSS,
   })
+  config.addWatchTarget(path.join(userConfig.dir.input, 'scss'))
+
   config.addPlugin(eleventyRemark, {
     plugins: [
       {
@@ -34,6 +36,10 @@ module.exports = (config) => {
 
   global.filters = config.javascriptFunctions
   config.setPugOptions({ globals: ['filters'] })
+
+  const dirJS = path.join(userConfig.dir.input, 'js', '*.js')
+  config.addPassthroughCopy(dirJS)
+  config.addWatchTarget(dirJS)
 
   return userConfig
 }
