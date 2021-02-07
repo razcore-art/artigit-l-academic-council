@@ -1,0 +1,16 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src="https://preview.babylonjs.com/babylon.js")
+    script(src="https://unpkg.com/animejs/lib/anime.min.js")
+    if project.ENV === "production"
+      script(src=`/${pkg.name}/js/script.js`)
+      link(rel="stylesheet" href=`/${pkg.name}/css/style.css`)
+    else
+      script(src="/js/script.js")
+      link(rel="stylesheet" href="/css/style.css")
+    title Aritig-L - Academic Council - Digital Samadhi
+
+  body!= content
+
