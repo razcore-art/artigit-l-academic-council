@@ -2,14 +2,28 @@
 @use '../../node_modules/raster-sass/dist/raster-grid.min.css';
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+$dark-color: #00303b;
+$primary-color: #ff7777 ;
+$secondary-color: #ffce96;
+$bright-color: #f1f2da;
+
 html {
   font-family: VT323, monospace;
+  font-size: 24px;
 }
 
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: $secondary-color;
+  }
 }
 
 #babylon-wrapper {
@@ -26,11 +40,16 @@ body {
     touch-action: none;
   }
 
-  > #title-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  > #content-wrapper {
+    color: $bright-color;
+    // height: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+  > #content-wrapper > #title,
+  > #content-wrapper > #begin-button {
+    text-align: center;
   }
 }
