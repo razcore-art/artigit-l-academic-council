@@ -32,8 +32,8 @@ function main (name, env) {
       particleSystem.minLifeTime = Number.MAX_SAFE_INTEGER
 
       const duration = 6
-      const titleText = 'digital twin'
-      const title = document.getElementById('title')
+      const titleText = 'digital samadhi^'
+      const title = document.getElementById('title-text')
       title.append(
         ...Array.from(titleText).map((value) => {
           const span = document.createElement('span')
@@ -50,14 +50,14 @@ function main (name, env) {
       anime
         .timeline()
         .add({
-          targets: '#title',
+          targets: '#content-wrapper',
           duration: (1000 * duration) / 4,
           opacity: [0, 1],
           easing: 'easeInSine'
         })
         .add(
           {
-            targets: '#title > span',
+            targets: '#title-text > span',
             duration: 1000 * duration,
             update: function (anim) {
               update++
