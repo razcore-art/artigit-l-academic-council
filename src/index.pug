@@ -1,7 +1,3 @@
----
-layout: layout
----
-
 div#babylon-wrapper
   canvas#babylon-engine
   r-grid#content-wrapper(columns="12")
@@ -11,7 +7,7 @@ div#babylon-wrapper
       h2 Welcome to...
       h2 You will entere an experience...
       if project.ENV === "production"
-        h2 #[a(href=`/${pkg.name}/experience`) Begin] your digital expereience...
+        h2 #[a(href=`${baseURL}/experience`) Begin] your digital expereience...
       else
         h2 #[a(href="/experience") Begin] your digital expereience...
     r-cell(span="5")
@@ -19,4 +15,4 @@ div#babylon-wrapper
         dt ^samadhi
         dd a state of intense concentration achieved through meditation. In Hindu yoga this is regarded as the final stage, at which union with the divine is reached (before or at death).
 
-script main('#{pkg.name}', '#{project.ENV}')
+script main('#{baseURL}')
