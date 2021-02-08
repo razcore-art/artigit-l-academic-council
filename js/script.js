@@ -5,7 +5,7 @@ function randomUnicode () {
   return String.fromCharCode(min + (max - min + 1) * Math.random())
 }
 
-function main (name, env) {
+function main (baseURL) {
   const canvas = document.getElementById('babylon-engine')
   const babylon = new BABYLON.Engine(canvas, true, {
     preserveDrawingBuffer: true,
@@ -21,9 +21,7 @@ function main (name, env) {
   camera.setTarget(BABYLON.Vector3.Zero())
   camera.attachControl(canvas, true)
 
-  let path = '/assets/particleSystem.json'
-  if (env === 'production') path = `/${name}${path}`
-
+  const path = `${baseURL}/assets/particleSystem.json`
   fetch(path)
     .then((response) => response.json())
     .then((data) => {
