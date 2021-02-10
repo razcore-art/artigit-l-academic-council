@@ -26,31 +26,37 @@ a {
   }
 }
 
-#babylon-wrapper {
+#babylon-engine {
+  width: 100%;
   height: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  touch-action: none;
+}
 
-  > #babylon-engine {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    touch-action: none;
-  }
+#content-wrapper {
+  color: $bright-color;
+}
 
-  > #content-wrapper {
-    color: $bright-color;
-  }
-
-  > #content-wrapper > #title,
-  > #content-wrapper > #begin-button {
-    text-align: center;
-  }
+#content-wrapper > #title,
+#content-wrapper > #begin-button {
+  text-align: center;
 }
 
 #user-input {
   width: 100%;
   resize: none;
+}
+
+@media screen and (orientation: portrait) {
+  html {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    position: absolute;
+    width: 100vh;
+    height: 100vw;
+    left: 100%;
+  }
 }
