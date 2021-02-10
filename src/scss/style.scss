@@ -42,14 +42,15 @@ a {
 
   > #content-wrapper {
     color: $bright-color;
-    // height: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
   }
 
   > #content-wrapper > #title,
   > #content-wrapper > #begin-button {
     text-align: center;
   }
+}
+
+#user-input {
+  width: 100%;
+  resize: none;
 }
