@@ -1,12 +1,12 @@
 function main (baseURL) {
-  const video = document.querySelector('video')
+  const video = document.getElementById('video')
   video.onended = () => {
-    const rGrid = document.querySelector('r-grid')
-    rGrid.style.display = 'grid'
+    const ep01 = document.getElementById('ep01')
+    ep01.style.display = 'block'
   }
 
-  const textarea = document.querySelector('textarea')
-  textarea.oninput = (event) => {
+  const userInput = document.getElementById('user-input')
+  userInput.oninput = (event) => {
     sessionStorage.ep01 = event.target.value
   }
 }
