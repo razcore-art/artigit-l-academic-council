@@ -5,7 +5,10 @@ html
     script(type="text/javascript" src=`${baseURL}/js/babylon.js`)
     script(type="text/javascript" src=`${baseURL}/js/anime.min.js`)
     script(type="text/javascript" src=`${baseURL}/js/webcam-easy.min.js`)
-    link(rel="stylesheet" href=`${baseURL}/css/style.css`)
+    link(type="text/css" rel="stylesheet" href=`${baseURL}/css/style.css`)
+    link(type="video/m4v" rel="preload" as="video" href=`${baseURL}/assets/ep01.m4v`)
+    link(type="video/m4v" rel="preload" as="video" href=`${baseURL}/assets/ep02.m4v`)
+    link(type="video/m4v" rel="preload" as="video" href=`${baseURL}/assets/ep03.m4v`)
     title Aritig-L - Academic Council - Digital Samadhi
 
   body!= content

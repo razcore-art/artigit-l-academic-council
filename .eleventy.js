@@ -37,8 +37,10 @@ module.exports = (config) => {
   global.filters = config.javascriptFunctions
   config.setPugOptions({ globals: ['filters'] })
 
-  const dirJS = path.join(userConfig.dir.input, 'js', '*.js')
+  const dirJS = path.join(userConfig.dir.input, 'js')
+  const dirAssets = path.join(userConfig.dir.input, 'assets')
   config.addPassthroughCopy(dirJS)
+  config.addPassthroughCopy(dirAssets)
   config.addWatchTarget(dirJS)
 
   return userConfig
