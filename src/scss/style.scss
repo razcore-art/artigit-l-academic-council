@@ -54,9 +54,13 @@ a {
 }
 
 #ep01, #ep02 {
-  // display: none;
+  display: none;
   background-color: $background-color;
   height: 100%;
+}
+
+#next {
+  display: none;
 }
 
 #user-input {
