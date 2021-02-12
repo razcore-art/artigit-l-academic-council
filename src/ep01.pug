@@ -1,10 +1,12 @@
 video(src=`${baseURL}/assets/ep01.m4v` width="100%" height="100%" autoplay)
-r-grid#ep01(columns="12")
-  r-cell(span="2-11")
-    h1 How do you want to be perceived by others?
-    textarea#user-input(rows="3")
-    br
-    a(href=`${baseURL}/ep02`) Next
+div#ep01
+  r-grid(columns="6")
+    r-cell(span="2-5")
+      h1 
+        span How do you want to be perceived by others?
+      textarea#user-input(rows="3")
+      br
+      a(href=`${baseURL}/ep02`) Next
 
 script(src=`${baseURL}/js/ep01.js`)
 script main('#{baseURL}')

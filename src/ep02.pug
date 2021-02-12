@@ -1,4 +1,14 @@
 video(src=`${baseURL}/assets/ep02.m4v` width="100%" height="100%" autoplay)
+div#ep02
+  r-grid(columns="12")
+    r-cell(span="3-10")
+      h1 Snapshot
+      video#webcam(autoplay playsinline width="640" height="480")
+      canvas#canvas
+    r-cell(span="3-10")
+      a#snapshot(href="#") Snapshot
+      span |
+      a(href=`${baseURL}/ep03`) Next
 
 script(src=`${baseURL}/js/ep02.js`)
 script main('#{baseURL}')
